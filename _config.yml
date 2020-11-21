@@ -4,7 +4,7 @@
 title: Edition Template
 url: "https://long-pig.cloudvent.net"
 baseurl:
-remote_theme:slslslrhfem/edition-jekyll-template
+remote_theme: slslslrhfem/edition-jekyll-template
 google_analytics_key:
 show_full_navigation: true
 
