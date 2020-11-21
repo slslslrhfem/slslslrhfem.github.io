@@ -1,66 +1,80 @@
-# SITE CONFIGURATION
-title: Sleek # your site title
-author: GitHub User # You :P
-description: > # Meta description of Homepage
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl:  # the subpath of your site, e.g. /blog
-url: "https://slslslrhfem.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-remote_theme : slslslrhfem/Sleek
+# ----
+# Site
 
-# SEO PLUGIN
+title: Edition Template
+url: "https://long-pig.cloudvent.net"
+baseurl:
+remote_theme:slslslrhfem/edition-jekyll-template
+google_analytics_key:
+show_full_navigation: true
+
+# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+logo: /siteicon.png
+description: Product documentation template for Jekyll.
+author:
+  name:
+  email:
+  twitter: # twitter username without the @ symbol
 social:
-  name: GoSeongHyeon
+  name: Edition Template
   links:
-    - https://github.com/slslslrhfem
+    - https://github.com/CloudCannon/edition-jekyll-template
 
-# THEME SETTINGS
-navigation: # Navigation links
-  - {name: 'Home', link: '/'}
-  - {name: 'About', link: '/about'}
-  - {name: 'Contact', link: '/contact'}
+# -----
+# Build
 
-tagline: >
-  Modern Jekyll theme focused on speed performance &amp; SEO best practices
-hero_img: posts/sleek_lg.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+timezone: Etc/UTC
 
-email: skskskrhfem@naver.com # email for form submission
-
-#twitter_username: jan_czizikow # replace with your_twitter_username or comment to remove link from footer
-github_username:  slslslrhfem # replace with your_github_username or comment to remove link from footer
-#instagram_username: shanlongjj # replace with your_instagram_username or comment to remove link from footer
-
-disqus:
-  shortname: skskskrhfem # to enable comments replace with your_disqus_shortname
-
-# google_tag_manager: GTM-XXXXXXX # Uncomment to enable GTM. Replace GTM-XXXXXXX with your GTM container ID
-
-service_worker: true
-
-# BUILD SETTINGS
-markdown: kramdown
-highlighter: rouge # or pygments or null
-# theme: jekyll-sleek # Uncomment if you're using the theme as a ruby gem
-exclude:
-  - README.md
-  - node_modules
-  - script
-  - package.json
-  - package-lock.json
-  - Gemfile
-  - Gemfile.lock
-  - vendor
-  - npm-debug.log
-  - gulpfile.js
-  - sleek.jpg
-
-include: ['_pages']
-permalink: /:title/
-
-compress_html:
-  clippings: all
+permalink: pretty
 
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+
+collections:
+  docs:
+    title: Documentation
+    permalink: /:path/
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "docs"
+    values:
+      seo:
+        type: Article
+      _comments:
+        category: Group navigation links with this field
+        order: Used to sort links in the navigation
+      _options:
+        content:
+          width: 800
+          height: 2000
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      _comments:
+        type: Marks the impact of this release
+
+# -----------
+# CloudCannon
+
+types:
+  - minor
+  - major
