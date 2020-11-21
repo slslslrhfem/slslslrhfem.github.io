@@ -1,8 +1,17 @@
 ---
-layout: post
-title:  "First post"
+title: Media support
+type: major
 ---
 
-# Welcome
+ChatApp introduces media support! Send images, videos and documents to your contacts.
 
-**Hello world**, this is my first Jekyll blog post.
+**Features:**
+
+* Image support
+* Video support
+* Document support
+
+**Fixes:**
+
+* Edge case contact syncing issue
+* All memory leaks obliterated
