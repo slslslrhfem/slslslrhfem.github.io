@@ -14,3 +14,5 @@ layout: post
 역할 분담 이외에는 팀 정적페이지 구성 및 프로젝트 선정과 관련된 Task가 진행된 상태입니다.
 
 별도의 Code implementation이나 수정은 진행되지 않았습니다.
+
+2번째 이후의 post는 Table이나 Icon 정보를 얻기 위해 우선 삭제하지 않았습니다.
